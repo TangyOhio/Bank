@@ -1,0 +1,13 @@
+<h1><%= @account.id ? 'Edit Account' : 'Create Account' %></h1>
+<hr />
+<%= form_for @account do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, autofocus: true %>
+  <br />
+  <%= f.label :balance %>
+  <%= f.number_field :balance %>
+  <br />
+  <%= f.submit class: "ui tiny basic primary button"%>
+<% end %>
+<br />
+<%= link_to "Back", accounts_path, class: "ui basic button" %>
